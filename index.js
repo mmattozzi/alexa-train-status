@@ -8,9 +8,6 @@ const handlers = {
     'LaunchRequest': function () {
         this.emit('TrainTime');
     },
-    'TrainTimeIntent': function () {
-        this.emit('TrainTime');
-    },
     'TrainTime': function () {
         console.log("Serving train time request");
         var thisHandler = this;
@@ -21,7 +18,7 @@ const handlers = {
     'AMAZON.HelpIntent': function () {
 	     var speechOutput = "";
         speechOutput += "Here are some things you can say: ";
-        speechOutput += "My train status";
+        speechOutput += "Where's my train";
         this.emit(':ask', speechOutput, speechOutput);
     },
     'AMAZON.CancelIntent': function () {
