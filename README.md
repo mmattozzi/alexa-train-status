@@ -4,10 +4,14 @@ An Alexa skill that lets me know when my next train to work is. This is a very s
 status. 
 
 ## Install
+Deploy using [serverless](https://serverless.com/):
+
     npm install
-    zip -r train-status.zip index.js node_modules query-train.js
+    serverless deploy
  
- Upload the resulting zip file as an AWS Lambda function. Follow the instructions in 
- [skill-sample-nodejs-fact](https://github.com/alexa/skill-sample-nodejs-fact) to create a skill in the Amazon developer portal
- and link it to an AWS Lambda function. 
- 
+Follow instructions in [serverless examples](https://github.com/serverless/examples/tree/master/aws-node-alexa-skill) to create an Alexa Skill and link it to the lambda ARN created via the serverless deploy. 
+
+## Run Locally
+```
+    serverless invoke local -f trainstatus -p LaunchRequest-input.json
+```
